@@ -649,7 +649,7 @@ const init = () => {
   // Add toggle button
   const toggle = document.createElement('button')
   toggle.className = 'kowalski-toggle'
-  toggle.innerHTML = '<span class="kowalski-toggle-dot"></span> Kowalski'
+  toggle.innerHTML = '<div class="kowalski-toggle-track"><div class="kowalski-toggle-thumb"></div></div> Kowalski'
   toggle.addEventListener('click', () => {
     document.documentElement.classList.toggle('kowalski-raw')
     document.body.classList.toggle('kowalski-raw')
