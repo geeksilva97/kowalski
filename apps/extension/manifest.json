@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Kowalski - FII Report Analyzer",
-  "version": "0.0.1",
-  "description": "Beautifies and analyzes FII reports from FNET/CVM",
+  "version": "0.1.0",
+  "description": "Transforma relatórios de FIIs do FNET/CVM em dashboards modernos com vacância, DY, rentabilidade e mais.",
+  "homepage_url": "https://github.com/geeksilva97/kowalski",
   "permissions": ["storage"],
   "content_scripts": [
     {
