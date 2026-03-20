@@ -1,5 +1,6 @@
 import { build } from 'esbuild'
-import { copyFile, mkdir, readdir } from 'node:fs/promises'
+import { copyFile, mkdir, readdir, readFile } from 'node:fs/promises'
+import { execSync } from 'node:child_process'
 
 await build({
   entryPoints: ['src/content.ts'],
@@ -19,3 +20,10 @@ for (const icon of icons) {
 }
 
 console.log('Extension built to dist/')
+
+if (process.argv.includes('--zip')) {
+  const manifest = JSON.parse(await readFile('manifest.json', 'utf-8'))
+  const zipName = `kowalski-v${manifest.version}.zip`
+  execSync(`cd dist && zip -r ../../../${zipName} .`)
+  console.log(`Packaged: ${zipName}`)
+}
