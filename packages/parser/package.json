@@ -1,0 +1,16 @@
+{
+  "name": "@kowalski/parser",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@kowalski/types": "workspace:*",
+    "linkedom": "^0.18.9"
+  }
+}

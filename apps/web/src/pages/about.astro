@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro'
+---
+
+<Base title="Sobre">
+  <section class="about">
+    <h1>Sobre o Kowalski</h1>
+    <p>Kowalski é uma plataforma para análise e acompanhamento de Fundos de Investimento Imobiliário (FIIs) brasileiros.</p>
+
+    <h2>Como funciona</h2>
+    <ol>
+      <li><strong>Extensão Chrome:</strong> Instale a extensão e navegue até um relatório no FNET. A extensão embeleza o relatório e destaca informações importantes.</li>
+      <li><strong>Extração automática:</strong> Os dados do relatório são extraídos e armazenados para comparação.</li>
+      <li><strong>Dashboard:</strong> Acompanhe a evolução dos seus FIIs ao longo do tempo.</li>
+    </ol>
+  </section>
+</Base>
+
+<style>
+  .about {
+    max-width: 640px;
+    padding: 48px 0;
+  }
+
+  .about h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .about h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 32px 0 16px;
+  }
+
+  .about p, .about li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 12px;
+  }
+
+  .about ol {
+    padding-left: 20px;
+  }
+</style>

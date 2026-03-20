@@ -1,0 +1,16 @@
+{
+  "name": "@kowalski/api",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.ts",
+    "test": "node --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@kowalski/parser": "workspace:*",
+    "@kowalski/types": "workspace:*",
+    "@hono/node-server": "^1",
+    "hono": "^4"
+  }
+}

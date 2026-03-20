@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Kowalski - FII Report Analyzer",
+  "version": "0.0.1",
+  "description": "Beautifies and analyzes FII reports from FNET/CVM",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://fnet.bmfbovespa.com.br/fnet/publico/exibirDocumento*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {}
+}
