@@ -1,77 +1,76 @@
 # Kowalski
 
-Chrome extension that transforms ugly FNET/CVM reports for Brazilian FIIs (Fundos de Investimento Imobiliário) into a modern, readable dashboard.
+Extensao Chrome que transforma os relatórios do FNET/CVM de FIIs (Fundos de Investimento Imobiliário) em um dashboard moderno e legível.
 
-## Monthly Reports
+## Relatórios Mensais
 
-**Before** — raw FNET tables with dense, hard-to-read data:
+**Antes** — tabelas cruas do FNET, densas e difíceis de ler:
 
-![Monthly Raw](docs/monthly-raw.png)
+![Mensal Raw](docs/monthly-raw.png)
 
-**After** — Kowalski extracts KPIs, highlights what matters, and presents data visually:
+**Depois** — Kowalski extrai os KPIs, destaca o que importa e apresenta os dados visualmente:
 
-![Monthly Kowalski](docs/monthly-kowalski.png)
+![Mensal Kowalski](docs/monthly-kowalski.png)
 
-## Quarterly Reports
+## Relatórios Trimestrais
 
-**Before** — pages of nested tables with property data, contracts, and financial statements:
+**Antes** — páginas de tabelas aninhadas com dados de imóveis, contratos e demonstrações financeiras:
 
-![Quarterly Raw](docs/quarterly-raw.png)
+![Trimestral Raw](docs/quarterly-raw.png)
 
-**After** — vacancy rates, rental income, property grid, contract maturity bars, and indexer distribution at a glance:
+**Depois** — taxa de vacância, receita de aluguéis, grid de imóveis, barras de vencimento de contratos e distribuição de indexadores em um olhar:
 
-![Quarterly Kowalski](docs/quarterly-kowalski.png)
+![Trimestral Kowalski](docs/quarterly-kowalski.png)
 
-![Quarterly Properties](docs/quarterly-properties.png)
+![Trimestral Imóveis](docs/quarterly-properties.png)
 
-![Quarterly Contracts](docs/quarterly-contracts.png)
+![Trimestral Contratos](docs/quarterly-contracts.png)
 
-## Features
+## Funcionalidades
 
-- **Ticker derivation** from ISIN code (e.g., `BRVISCCTF005` becomes `VISC11`)
-- **Monthly reports**: dividend yield, rentabilidade, taxa admin, PL, caixa (cash), cotistas bar chart, passivos breakdown, asset allocation chart
-- **Quarterly reports**: vacancy and default rates per property, rental income, net result, property grid, contract maturity distribution, indexer split (IGP-M, IPCA, etc.)
-- **Toggle switch** to flip between beautified and original view
-- **Dark theme** inspired by Bloomberg Terminal — Inter + JetBrains Mono, high contrast, color-coded signals
+- **Ticker automático** a partir do código ISIN (ex: `BRVISCCTF005` vira `VISC11`)
+- **Relatórios mensais**: dividend yield, rentabilidade, taxa de administração, PL, caixa, gráfico de cotistas, detalhamento de passivos, composição do ativo
+- **Relatórios trimestrais**: vacância e inadimplência por imóvel, receita de aluguéis, resultado líquido, grid de imóveis, distribuição de vencimento de contratos, indexadores (IGP-M, IPCA, etc.)
+- **Toggle** para alternar entre a visão Kowalski e o relatório original
+- **Tema escuro** inspirado no Bloomberg Terminal — Inter + JetBrains Mono, alto contraste, sinais visuais por cor
 
-## Install
+## Instalação
 
 ```bash
-# Clone and build
 git clone https://github.com/geeksilva97/kowalski.git
 cd kowalski
 pnpm install
 cd apps/extension && node build.ts
 ```
 
-Then load in Chrome:
+Depois carregue no Chrome:
 
-1. Go to `chrome://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select `apps/extension/dist`
-5. Navigate to any report on [FNET](https://fnet.bmfbovespa.com.br)
+1. Acesse `chrome://extensions`
+2. Ative o **Modo de desenvolvedor**
+3. Clique em **Carregar sem compactação**
+4. Selecione a pasta `apps/extension/dist`
+5. Navegue até qualquer relatório no [FNET](https://fnet.bmfbovespa.com.br)
 
 ## Stack
 
-| Layer | Tech |
+| Camada | Tecnologia |
 |---|---|
-| Extension | TypeScript + esbuild (Manifest V3) |
-| API | Hono on Node.js |
+| Extensão | TypeScript + esbuild (Manifest V3) |
+| API | Hono no Node.js |
 | Web | Astro |
-| Parser | linkedom (shared between extension & API) |
+| Parser | linkedom (compartilhado entre extensão e API) |
 | Monorepo | Turborepo + pnpm |
-| Tests | node:test + Vitest (85 tests) |
-| Runtime | Node.js 24+ with native TypeScript |
+| Testes | node:test + Vitest (85 testes) |
+| Runtime | Node.js 24+ com TypeScript nativo |
 
-## Project Structure
+## Estrutura
 
 ```
 apps/
-  extension/   Chrome extension (content script + CSS)
-  api/         Hono API server
-  web/         Astro dashboard
+  extension/   Extensão Chrome (content script + CSS)
+  api/         Servidor API Hono
+  web/         Dashboard Astro
 packages/
-  parser/      FNET HTML → structured data
-  types/       Shared TypeScript interfaces
+  parser/      HTML do FNET → dados estruturados
+  types/       Interfaces TypeScript compartilhadas
 ```
