@@ -1,6 +1,10 @@
-# Kowalski
+<p align="center">
+  <img src="docs/logo.png" alt="Kowalski" width="128" />
+</p>
 
-Extensao Chrome que transforma os relatórios do FNET/CVM de FIIs (Fundos de Investimento Imobiliário) em um dashboard moderno e legível.
+<h1 align="center">Kowalski</h1>
+
+<p align="center">Extensão Chrome que transforma os relatórios do FNET/CVM de FIIs (Fundos de Investimento Imobiliário) em um dashboard moderno e legível.</p>
 
 ## Relatórios Mensais
 

@@ -3,3 +3,4 @@ dist
 .astro
 .turbo
 *.log
+.DS_Store
